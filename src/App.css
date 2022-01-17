@@ -5,6 +5,12 @@
     font-family: "Open Sans", sans-serif;
 }
 
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    and:not(:last-child) {
+        margin-right: 5%;
+    }
+}
+
 .App {
     text-align: center;
 }
@@ -44,6 +50,12 @@
 @media screen and (max-width: 500px) {
     .calculator-grid>button {
         font-size: calc(12px + 4vmin);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #delete {
+        font-size: 7vw;
     }
 }
 
