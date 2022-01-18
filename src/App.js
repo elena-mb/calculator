@@ -15,15 +15,20 @@ function App() {
     setResult(prevRes => prevRes.toString().slice(0, -1));
   }
 
+  const regexSpace = new RegExp('\\s', 'g');
+
   function getDisplayNum(num) {
     const stringNum = num.toString();
+    
+    stringNum.replace(regexSpace, '');
+    console.log(stringNum.replace(regexSpace, ''));
     const integerDigits = parseFloat(stringNum.split('.')[0]);
     const decimalDigits = stringNum.split('.')[1];
     let integerDisplay;
     if (isNaN(integerDigits)) {
       integerDisplay = '';
     } else {
-      integerDisplay = integerDigits.toLocaleString('en')
+      integerDisplay = integerDigits.toLocaleString()
     }
     if (decimalDigits != null) {
       return `${integerDisplay}.${decimalDigits}`
@@ -36,17 +41,17 @@ function App() {
       setResult(0);
     }
     if (!(e.target.innerHTML === '.' && result.toString().includes('.'))) {
-      setResult(res => getDisplayNum(res.toString() + e.target.innerHTML));
+      setResult(res => getDisplayNum(res.toString().replace(regexSpace, '') + e.target.innerHTML));
     }
   }
 
   function chooseOperation(e) {
     let oper = e.target.innerHTML;
     if (result !== '' && previous !== '') {
-      setPrevious(prev => prev + ' ' + getDisplayNum(result) + ' ' + oper);
+      setPrevious(prev => prev + ' ' + getDisplayNum(result.replace(regexSpace, '')) + ' ' + oper);
       setResult('');
     } if (previous == '' || previous.includes('=')) {
-      setPrevious(getDisplayNum(result) + ' ' + oper);
+      setPrevious(getDisplayNum(result.replace(regexSpace, '')) + ' ' + oper);
       setResult('')
     } if (result == '') { // if we want to change operation      
       if (oper == '−') { // if pressed after another sign, it is treated as sign of the negative number
@@ -63,12 +68,14 @@ function App() {
 
 
   function compute() {
-    setPrevious(prev => prev + ' ' + getDisplayNum(result) + ' ' + '=');
-    setResult(counter(previous + ' ' + getDisplayNum(result)));
+    setPrevious(prev => prev + ' ' + getDisplayNum(result.replace(regexSpace, '')) + ' ' + '=');
+    setResult(counter(previous + ' ' + getDisplayNum(result.replace(regexSpace, ''))));
   
     function counter(str) {
       var array = str.split(' ');
-  
+     
+      array = array.map(el => el.replace(regexSpace, ''));
+      console.log(array);
       // change all numbers to actual numbers
       array = array.map(element => (isNaN(element * 1)) ? element : parseFloat(element));
   
