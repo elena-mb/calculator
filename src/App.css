@@ -93,3 +93,7 @@ _:future,
     color: white;
     font-size: 2.5rem;
 }
+
+button {
+    color: black;
+}
