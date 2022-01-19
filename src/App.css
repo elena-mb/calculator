@@ -61,10 +61,8 @@ _:future,
     text-align: left;
     color: #0000FF;
     background-color: black;
-}
-
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-    /* Your Class */
+    display: flex;
+    justify-content: left;
 }
 
 .calculator-grid>button:hover {
