@@ -54,10 +54,12 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+    /* Your Class */
     #del {
         font-size: 7vw;
         text-align: center;
+        margin-left: -5px;
     }
 }
 
