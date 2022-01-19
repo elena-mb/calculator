@@ -54,13 +54,18 @@
     }
 }
 
+_::-webkit-full-page-media,
+_:future,
+ :root .safari_only {
+    font-size: 7vw;
+    text-align: center;
+    margin-left: -5px;
+    color: #0000FF;
+    background-color: black;
+}
+
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
     /* Your Class */
-    #del {
-        font-size: 7vw;
-        text-align: center;
-        margin-left: -5px;
-    }
 }
 
 .calculator-grid>button:hover {

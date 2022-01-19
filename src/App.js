@@ -149,7 +149,7 @@ function App() {
             <div id="display" className="current-operand">{result}</div>
           </div>
           <button id="clear" className="span-two" onClick={clear}>AC</button>
-          <button id="del" onClick={del}>DEL</button>
+          <button id="del" className='safari_only' onClick={del}>DEL</button>
           <button id="divide" onClick={chooseOperation}>÷</button>
           <button id="one" onClick={append}>1</button>
           <button id="two" onClick={append}>2</button>
