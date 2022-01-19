@@ -55,7 +55,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    #delete {
+    #del {
         font-size: 7vw;
         text-align: center;
     }

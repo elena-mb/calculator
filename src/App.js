@@ -134,7 +134,7 @@ function App() {
       }
   
       let answer = count(array);
-      return (answer.toString().includes('.') && answer.toString().length > 5) ? answer.toFixed(5) : answer;
+      return (answer.toString().includes('.') && answer.toString().length > 5) ? getDisplayNum(answer.toFixed(5)) : getDisplayNum(answer);
   }
 
   }
@@ -149,7 +149,7 @@ function App() {
             <div id="display" className="current-operand">{result}</div>
           </div>
           <button id="clear" className="span-two" onClick={clear}>AC</button>
-          <button id="delete" onClick={del}>DEL</button>
+          <button id="del" onClick={del}>DEL</button>
           <button id="divide" onClick={chooseOperation}>÷</button>
           <button id="one" onClick={append}>1</button>
           <button id="two" onClick={append}>2</button>
