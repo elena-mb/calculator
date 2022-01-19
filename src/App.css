@@ -58,8 +58,7 @@ _::-webkit-full-page-media,
 _:future,
  :root .safari_only {
     font-size: 7vw;
-    text-align: center;
-    margin-left: -35px;
+    text-align: left;
     color: #0000FF;
     background-color: black;
 }
