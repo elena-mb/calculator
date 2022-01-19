@@ -13,6 +13,7 @@
 
 .App {
     text-align: center;
+    color: black;
 }
 
 .App-header {
@@ -58,11 +59,9 @@ _::-webkit-full-page-media,
 _:future,
  :root .safari_only {
     font-size: 7vw;
-    text-align: left;
-    color: #0000FF;
-    background-color: black;
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    align-items: center;
 }
 
 .calculator-grid>button:hover {
