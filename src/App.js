@@ -134,7 +134,7 @@ function App() {
       }
   
       let answer = count(array);
-      return (answer.toString().includes('.') && answer.toString().length > 5) ? getDisplayNum(answer.toFixed(5)) : getDisplayNum(answer);
+      return (answer.toString().includes('.') && answer.toString().length > 5) ? getDisplayNum(answer.toFixed(5) * 1) : getDisplayNum(answer);
   }
 
   }
